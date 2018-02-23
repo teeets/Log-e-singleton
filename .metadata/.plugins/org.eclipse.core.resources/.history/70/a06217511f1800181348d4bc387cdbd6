@@ -1,0 +1,25 @@
+package br.com.fiap.loja;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class TerminalConsulta {
+
+	public static void main(String[] args) {
+		Scanner tec = new Scanner(System.in);
+
+		Calendar hoje = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+		System.out.println("Fiap      " + sdf.format(hoje.getTime()));
+		System.out.println("*******************");
+		
+		System.out.print("Digite o código do produto:");
+		int codigo = tec.nextInt();
+		
+		tec.close();
+
+	}
+
+}

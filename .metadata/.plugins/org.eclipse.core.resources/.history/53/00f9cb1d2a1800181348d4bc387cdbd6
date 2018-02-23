@@ -1,0 +1,10 @@
+package br.com.fiap.loja.EstoqueBO;
+
+import br.com.fiap.to.ProdutoTO;
+
+public class EstoqueBO {
+
+	ProdutoTO prod = new ProdutoTO();
+	
+	
+}

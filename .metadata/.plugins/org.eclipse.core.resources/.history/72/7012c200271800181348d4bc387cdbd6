@@ -1,0 +1,19 @@
+package br.com.fiap.singleton;
+
+import java.util.Properties;
+
+public class PropertySingleton {
+	
+	//1- Atributo Estático que armazena a instancia unica
+	private static Properties prop;
+	
+	//2- Método estático que retorna a instância única
+	public static Properties getInstance() {
+		if(prop == null) {
+			//Inicialisa objeto
+		}
+		return prop;
+	}
+	
+
+}

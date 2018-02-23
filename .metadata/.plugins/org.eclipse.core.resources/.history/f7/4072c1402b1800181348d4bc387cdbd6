@@ -1,0 +1,40 @@
+package br.com.fiap.loja;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Scanner;
+
+import br.com.fiap.loja.EstoqueBO.EstoqueBO;
+
+public class TerminalConsulta {
+
+	public static void main(String[] args) {
+		Scanner tec = new Scanner(System.in);
+
+		Calendar hoje = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		int codigo;
+
+		System.out.println("Fiap      " + sdf.format(hoje.getTime()));
+		System.out.println("*******************");
+
+		EstoqueBO chamaEstoque = new EstoqueBO();
+		
+		System.out.print("Digite o código do produto:");
+		codigo = tec.nextInt();//ler o codigo
+		if(codigo == 401) {
+			System.out.println(chamaEstoque.criaCamisaF());
+		}else if(codigo == 402){
+			
+		}
+		
+		
+		
+	}
+
+
+}
+
+
+
+

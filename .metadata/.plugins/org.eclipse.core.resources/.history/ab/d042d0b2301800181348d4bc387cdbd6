@@ -1,0 +1,23 @@
+package br.com.fiap.loja.EstoqueBO;
+
+import br.com.fiap.to.ProdutoTO;
+
+public class EstoqueBO extends ProdutoTO {
+
+	public void criaCamisaM() {
+	ProdutoTO camisaM = new ProdutoTO();
+	camisaM.setCodigo(401);
+	camisaM.setNome("Camisa Masculina");
+	camisaM.setPreco(13.50);
+	camisaM.setQtd(5);
+	}
+	
+	public void criaCamisaF() {
+	ProdutoTO camisaF = new ProdutoTO();
+	camisaF.setCodigo(402);
+	camisaF.setNome("Camisa Feminina");
+	camisaF.setPreco(20.00);
+	camisaF.setQtd(1);
+	}
+	
+}

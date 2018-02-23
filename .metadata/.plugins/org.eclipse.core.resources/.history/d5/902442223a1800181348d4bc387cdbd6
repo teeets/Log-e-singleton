@@ -1,0 +1,56 @@
+package br.com.fiap.loja;
+
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Scanner;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+import br.com.fiap.loja.EstoqueBO.EstoqueBO;
+import br.com.fiap.sigleton.PropertysSingleton;
+import br.com.fiap.to.ProdutoTO;
+
+public class TerminalConsulta {
+
+	public static void main(String[] args) {
+		Scanner tec = new Scanner(System.in);
+
+		private static final Logger log = LoggerFactory.getLogger(class.TerminalConsulta);
+		
+		EstoqueBO bo = new EstoqueBO();//Instanciado para usar o metodo .consultarProduto
+		DecimalFormat df = new DecimalFormat("R$ ##,###.00");
+		Calendar hoje = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		int codigo;
+		
+		String nome = PropertysSingleton.getInstance().getProperty("nome");
+		System.out.println(nome + "      " + sdf.format(hoje.getTime()));
+		System.out.println("*******************");
+		
+		do {
+			System.out.print("Digite o código do produto:");
+			codigo = tec.nextInt();//ler o codigo
+
+			if(codigo !=0) {
+				ProdutoTO prod = bo.consultarProduto(codigo);
+
+				if (prod != null) {
+					System.out.println(prod.getNome());
+					System.out.println(df.format(prod.getPreco()));
+					System.out.println(prod.getQtd());
+				}else {
+					System.out.println("Produto não cadastrado");
+				}
+			}
+		}while(codigo != 0 );
+
+		System.out.println("Fim da aplicaão");
+		tec.close();
+
+	}
+
+	
+}

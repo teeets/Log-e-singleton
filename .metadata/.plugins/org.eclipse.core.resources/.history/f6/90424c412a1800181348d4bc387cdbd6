@@ -1,0 +1,12 @@
+package br.com.fiap.loja.EstoqueBO;
+
+import br.com.fiap.to.ProdutoTO;
+
+public class EstoqueBO extends ProdutoTO {
+
+	public void criaCamisa() {
+	ProdutoTO camisaM = new ProdutoTO();
+	
+	}
+	
+}
